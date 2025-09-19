@@ -15,20 +15,6 @@ Este proyecto es un trabajo real que hice para la subdirectora de la cárcel de 
 - Perfil para cada usuario.
 - Preguntas de seguridad para recuperación de contraseña.
 - Editor de texto enriquecido para los formularios.
-  
-
-![Este es el home](capturas/home.png)
-![Este es el formulario de registro](capturas/registro.png)
-![Perfiles](capturas/perfiles.png)
-![Este es el login](capturas/login.png)
-![Recuperación de la contraseña](capturas/recuperacion_contraseña.png)
-![Vista del día](capturas/vista_dia_calendario.png)
-![Vista semana](capturas/vista_semana_calendario.png)
-![Calendario con eventos clicables](capturas/calendario_eventos_clicables.png)
-![Detalle del evento](capturas/detalle_evento.png)
-![Formulario editar evento](capturas/editar_evento.png)
-![Listado de eventos con filtros](capturas/filtros_listar_eventos.png)
-![Paginación](capturas/paginación.png)
 
 
 ## 💻 Backend
