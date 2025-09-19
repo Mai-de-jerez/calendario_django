@@ -1,0 +1,69 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{ empleado.nombre }} {{ empleado.apellidos }}{% endblock %}
+{% block segundo_nav%}
+  {% include 'empleados/includes/empleados_menu.html'%}
+{% endblock %}
+{% block content %}
+<main role="main">
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <!-- Ficha del Empleado -->
+        <div class="card shadow-sm rounded-3">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Ficha de Profesional</h4>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-center mb-4">{{ empleado.nombre }} {{ empleado.apellidos }}</h3>
+            <hr>
+            <dl class="row">
+              <!-- Nombre -->
+              <dt class="col-sm-3 text-truncate">Nombre:</dt>
+              <dd class="col-sm-9">{{ empleado.nombre }}</dd>
+
+              <!-- Apellidos -->
+              <dt class="col-sm-3 text-truncate">Apellidos:</dt>
+              <dd class="col-sm-9">{{ empleado.apellidos }}</dd>
+
+              <!-- Departamento -->
+              <dt class="col-sm-3 text-truncate">Departamento:</dt>
+              <dd class="col-sm-9">{{ empleado.departamento }}</dd>
+
+              <!-- Teléfono -->
+              <dt class="col-sm-3 text-truncate">Teléfono:</dt>
+              <dd class="col-sm-9">{{ empleado.telefono }}</dd>
+
+              <!-- Email -->
+              <dt class="col-sm-3 text-truncate">Email:</dt>
+              <dd class="col-sm-9">{{ empleado.email }}</dd>
+
+              <!-- Observaciones -->
+              <dt class="col-sm-3 text-truncate">Observaciones:</dt>
+              <dd class="col-sm-9">{{ empleado.observaciones|safe|default:"Sin observaciones." }}</dd>
+            </dl>
+          </div>
+          <div class="card-footer bg-light d-flex justify-content-between">
+            <!-- Botón Volver -->
+            <button onclick="window.history.back()" class="btn btn-secondary">
+              Volver
+            </button>
+            
+            {% if request.user.is_staff %}
+            <!-- Botones de Editar y Borrar (solo para staff) -->
+            <div>
+              <a href="{% url 'empleados:update' object.pk %}" class="btn btn-warning me-2">
+                Editar
+              </a>
+              <a href="{% url 'empleados:delete' object.pk %}" class="btn btn-danger">
+                Borrar
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

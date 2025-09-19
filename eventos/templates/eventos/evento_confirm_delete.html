@@ -1,0 +1,23 @@
+{# evento_confirm_delete.html #}
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Borrar Evento{% endblock %}
+{% block segundo_nav%}
+  {% include 'eventos/includes/eventos_menu.html'%}
+{% endblock %}
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <div>
+            <form action="" method="post">{% csrf_token %}
+                <p>¿Estás seguro de que quieres borrar <b>"{{ object }}"</b>?</p>
+                <input type="submit" class="btn btn-primary w-100 fa-lg gradient-custom-2 mb-3 custom-font" value="Sí, borrar evento" />
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

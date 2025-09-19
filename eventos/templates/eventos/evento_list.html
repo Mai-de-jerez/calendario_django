@@ -1,0 +1,114 @@
+{# evento_list.html #}
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Eventos{% endblock %}
+{% block segundo_nav %}
+  {% include 'eventos/includes/eventos_menu.html' %}
+{% endblock %}
+{% block content %}
+<main role="main">
+  <div class="container mb-4">
+    {% if 'ok' in request.GET %}
+      <div class="alert alert-success">
+        Operación realizada correctamente.
+      </div>
+    {% endif %}
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <h2 class="mb-4">Lista de Eventos</h2>
+        <form method="GET" class="mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-3 mb-2">
+                    <input type="text" 
+                          class="form-control" 
+                          name="responsable" 
+                          placeholder="Buscar por Responsable" 
+                          value="{{ responsable_query }}">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <input type="text" 
+                          class="form-control" 
+                          name="lugar" 
+                          placeholder="Buscar por Lugar" 
+                          value="{{ lugar_query }}">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <input type="text" 
+                          class="form-control" 
+                          name="modulo" 
+                          placeholder="Buscar por Módulo" 
+                          value="{{ modulo_query }}">
+                </div>
+                <div class="col-md-3 mb-2 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary mr-2">Buscar</button>
+                    <a href="{% url 'eventos:evento_list' %}" class="btn btn-secondary">Limpiar</a>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Fecha</th>
+                <th>Responsable</th>
+                <th>Lugar</th>
+                <th>Modulo</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for evento in evento_list %}
+                <tr>
+                  <td>{{ evento.titulo }}</td>
+                  <td>{{ evento.fecha }}</td>
+                  <td>{{ evento.responsable }}</td>
+                  <td>{{ evento.lugar }}</td>
+                  <td>
+                    {% for modulo in evento.modulo.all %}
+                      {{ modulo.nombre }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                  </td>
+                  <td>
+                      <a href="{% url 'eventos:evento_detail' evento.id %}">Ver detalles</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div><br>
+        <!-- Menú de Paginación -->
+        {% if is_paginated %}
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              {% if page_obj.has_previous %}
+                <li class="page-item ">
+                  <a class="page-link" href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}">&laquo;</a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+                </li>
+              {% endif %}
+              {% for i in paginator.page_range %}
+                <li class="page-item {% if page_obj.number == i %}active{% endif %}">
+                  <a class="page-link" href="?{{ request.GET.urlencode }}&page={{ i }}">{{ i }}</a>
+                </li>
+              {% endfor %}
+              {% if page_obj.has_next %}
+                <li class="page-item ">
+                  <a class="page-link" href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">&raquo;</a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">&raquo;</a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

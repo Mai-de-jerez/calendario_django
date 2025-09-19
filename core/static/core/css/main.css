@@ -1,0 +1,214 @@
+/* main.css */
+
+/* Configuración para la fuente variable */
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto_Condensed-Regular.ttf') format('truetype');
+  font-weight: 100 900; 
+  font-style: normal;
+}
+
+
+/* Color y estilos para la barra de navegación y de los enlaces */
+.bg-naranja {
+  background-color: #d8363a;
+}
+
+.navbar-transparent {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-brand {
+    color: #fff !important;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, .75) !important;
+}
+
+.no-uppercase {
+  text-transform: none !important;
+}
+
+
+/* Nuevas reglas para la barra de navegación transparente */
+.navbar-transparent .navbar-brand {
+  color: #000 !important;
+}
+
+.navbar-transparent .nav-link {
+  color: #000 !important;
+}
+
+.navbar-transparent .nav-link:hover {
+  color: rgba(0, 0, 0, .75) !important;
+}
+
+/** otros estilos **/ 
+
+h1, h2, h3, h4, h5, h6, .jumbotron-heading {
+  font-family: 'Lora', serif;
+}
+
+
+main{
+    padding-top: 20px;
+}
+:root {
+    --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+    padding-top: var(--jumbotron-padding-y);
+    padding-bottom: var(--jumbotron-padding-y);
+    margin-bottom: 0;
+    background-color: #fff;
+}
+@media (min-width: 768px) {
+    .jumbotron {
+        padding-top: calc(var(--jumbotron-padding-y) * 2);
+        padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+    }
+}
+
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+
+.jumbotron-heading {
+    font-weight: 300;
+}
+
+.jumbotron .container {
+max-width: 40rem;
+}
+
+/* Estilos avatar */
+
+.profile-avatar {
+  width: 150px; 
+  height: 150px;
+  overflow: hidden; 
+  border-radius: 50%;
+  margin: auto;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%; /* Cambiado para asegurar que ocupe todo el espacio */
+  object-fit: cover; /* ¡Esto es lo clave! */
+}
+
+/* Estilos login */
+
+.custom-font {
+  font-family: "Roboto", serif !important;
+  font-size: 16px !important; 
+}
+
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90 !important;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593) !important;
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593) !important;
+}
+
+@media (min-width: 768px) {
+.gradient-form {
+height: 100vh !important;
+}
+}
+@media (min-width: 769px) {
+.gradient-custom-2 {
+border-top-right-radius: .3rem;
+border-bottom-right-radius: .3rem;
+}
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  /* Define la imagen de fondo y su ruta */
+  background-image: url('../img/fondo.jpg');
+
+  /* Opciones para que la imagen se vea bien */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+   
+}
+
+
+/* Estilos para el contenedor de contenido principal */
+.content-wrapper {
+    background-color: rgba(255, 255, 255, 0.8); /* Blanco con 80% de opacidad */
+    padding: 20px; /* Espacio para que el texto no se pegue a los bordes */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    margin-top: 20px; /* Espacio entre la barra de navegación y el contenido */
+    margin-bottom: 20px; /* Espacio entre el contenido y el pie de página */
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer p {
+    margin-bottom: .25rem;
+}
+
+.box-shadow { 
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); 
+}
+
+/* Paginación azul acorde a botones buscar y limpiar*/
+.pagination .active .page-link {
+  background-color: #3B71CA;  
+  color: #fff;
+}
+
+/* encabezados negrita de tabla */
+.table thead th {
+  font-weight: bold;
+}
+
+
+
+
+

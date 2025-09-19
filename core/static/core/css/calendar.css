@@ -1,0 +1,110 @@
+/* calendar.css */
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-image: url('../img/fondo.jpg'); /* Reemplaza 'fondo.jpg' con la ruta a tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    padding-top: 70px; /* Para evitar que el contenido se superponga con la barra de navegación */
+    margin:0;
+    height: 100vh;
+    }
+
+/** ESTILOS BARRA NAV **/
+
+.bg-naranja {
+    background-color: #d8363a !important;
+    }
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, .75) !important;
+    }
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    }
+
+
+/** ESTILOS CALENDARIO **/
+
+#calendar-container {
+    height: calc(100vh - 70px); /* Ocupa el 100% de la altura menos la barra de navegación */
+    width: 85%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    }
+
+#calendar {
+    height: 97%;
+    background-color: transparent; /* Fondo transparente para ver la imagen de fondo */
+    border-radius: 10px;
+    padding: 10px;
+    }
+
+/* Estilos para el encabezado de los días de la semana */
+.fc-col-header-cell {
+    color: white; /* Color blanco para el texto */
+    background-color: #222243; /* Color gris claro para las celdas de los días de la semana */
+    font-weight: bold;
+    }
+
+/* Estilos para las celdas de los días */
+.fc-daygrid-day-frame {
+    background-color: rgba(227, 227, 202, 0.75); 
+    }
+
+/* Resaltar el día de hoy */
+.fc-day-today .fc-daygrid-day-frame {
+    background-color: rgba(204, 133, 67, 0.5); /* rojo transparente */
+}
+
+
+/* Estilos para las líneas de la cuadrícula, incluyendo los bordes exteriores del contenedor principal */
+.fc-theme-standard .fc-scrollgrid,
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border-color: #192A56 !important;
+    }
+
+/* Marca toda la columna del día actual (timeGridWeek) */
+.fc-timegrid-col.fc-day-today,
+.fc-timegrid-col.fc-day-today .fc-timegrid-slot {
+    background-color: rgb(208, 117, 32) !important;
+}
+
+/* Marca toda la columna del día (timeGridWeek) */
+
+
+.fc-timegrid-slot {
+    background-color: rgba(227, 227, 202, 0.75) !important;
+}
+
+.fc-timegrid-slot-label-cushion {
+  font-weight: bold;
+}
+
+.fc-timegrid-axis,
+.fc-timegrid-axis th {
+    background-color: #222243;
+}
+
+.fc-timegrid-axis-cushion {
+    background-color: rgba(227, 227, 202, 0.75) !important;
+    font-weight: bold !important;
+}
+
+
+

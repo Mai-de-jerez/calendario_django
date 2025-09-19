@@ -1,0 +1,100 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Empleados{% endblock %}
+{% block segundo_nav %}
+  {% include 'empleados/includes/empleados_menu.html' %}
+{% endblock %}
+{% block content %}
+<main role="main">
+  <div class="container mb-4">
+    {% if 'ok' in request.GET %}
+      <div class="alert alert-success">
+        Operación realizada correctamente.
+      </div>
+    {% endif %}
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <h2 class="mb-4">Lista de Profesionales</h2>
+        <form method="GET" class="mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-2">
+                    <input type="text" 
+                          class="form-control" 
+                          name="busqueda" 
+                          placeholder="Buscar por Nombre o Apellidos" 
+                          value="{{ busqueda_query }}">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <input type="text" 
+                          class="form-control" 
+                          name="departamento" 
+                          placeholder="Buscar por Departamento" 
+                          value="{{ departamento_query }}">
+                </div>
+                <div class="col-md-3 mb-2 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary mr-2">Buscar</button>
+                    <a href="{% url 'empleados:empleados' %}" class="btn btn-secondary">Limpiar</a>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Departamento</th>
+                <th>Email</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for empleado in empleado_list %}
+              <tr>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.apellidos }}</td>
+                <td>{{ empleado.departamento }}</td>
+                <td>{{ empleado.email }}</td>
+                <td>
+                  <a href="{% url 'empleados:empleado' empleado.id %}">Ver detalles</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <!-- Menú de Paginación -->
+        {% if is_paginated %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}">&laquo;</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+                        </li>
+                    {% endif %}
+                    {% for i in paginator.page_range %}
+                        <li class="page-item {% if page_obj.number == i %}active{% endif %}">
+                            <a class="page-link" href="?{{ request.GET.urlencode }}&page={{ i }}">{{ i }}</a>
+                        </li>
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">&raquo;</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">&raquo;</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

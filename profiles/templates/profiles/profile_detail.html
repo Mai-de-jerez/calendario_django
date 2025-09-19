@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{profile.user}}{% endblock %}
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-10 mx-auto mb-5">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div class="row">
+            <!-- Avatar -->
+            <div class="col-md-3">
+                <div class="profile-avatar">
+                  {% if profile.avatar %}
+                    <img src="{{profile.avatar.url}}" class="img-fluid">
+                  {% else %}
+                    <img src="{% static 'registration/img/no-avatar.jpg' %}" class="img-fluid">
+                  {% endif %}
+                </div>
+                  {% if request.user != profile.user %}
+                    <a href="{% url 'messenger:start' profile.user.username %}" class="btn btn-primary w-100 fa-lg gradient-custom-2 mb-3 mt-3 custom-font">
+                      Enviar mensaje
+                    </a>
+                  {% endif %}
+            </div>
+            <!-- Campos -->
+            <div class="col-md-8">
+              <h3>Perfil de usuario</h3><hr>
+              <p><span class="fw-bold">Nombre:</span> {{profile.user.first_name}}</p>
+              <p><span class="fw-bold">Apellidos:</span> {{profile.user.last_name}}</p>
+              {% if profile.user.telefono %}<p><span class="fw-bold">Teléfono:</span> {{ profile.user.telefono }}</p>{% endif %}
+              {% if profile.user.departamento %}<p><span class="fw-bold">Departamento:</span> {{ profile.user.departamento }}</p>{% endif %}
+              {% if profile.user.email %}<p><span class="fw-bold">Email:</span> {{ profile.user.email }}</p>{% endif %}
+              {% if profile.bio %}<p><span class="fw-bold">Descripción:</span> {{profile.bio}}</p>{% endif %}
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
