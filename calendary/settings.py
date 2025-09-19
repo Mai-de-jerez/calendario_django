@@ -25,9 +25,9 @@ load_dotenv(dotenv_path=BASE_DIR / ".env")
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["may1985.pythonanywhere.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
