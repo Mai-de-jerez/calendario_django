@@ -18,22 +18,24 @@
         <form method="GET" class="mb-4">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-2">
-                    <input type="text" 
-                          class="form-control" 
-                          name="busqueda" 
-                          placeholder="Buscar por Nombre o Apellidos" 
-                          value="{{ busqueda_query }}">
+                  <input type="text" 
+                        class="form-control" 
+                        name="busqueda" 
+                        placeholder="Buscar por Nombre o Apellidos" 
+                        value="{{ busqueda_query }}">
                 </div>
                 <div class="col-md-3 mb-2">
-                    <input type="text" 
-                          class="form-control" 
-                          name="departamento" 
-                          placeholder="Buscar por Departamento" 
-                          value="{{ departamento_query }}">
+                  <input type="text" 
+                        class="form-control" 
+                        name="departamento" 
+                        placeholder="Buscar por Departamento" 
+                        value="{{ departamento_query }}">
                 </div>
-                <div class="col-md-3 mb-2 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary mr-2">Buscar</button>
+                <div class="col-md-3 mb-2">
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary me-md-2">Buscar</button>
                     <a href="{% url 'empleados:empleados' %}" class="btn btn-secondary">Limpiar</a>
+                  </div>
                 </div>
             </div>
         </form>
@@ -62,7 +64,7 @@
               {% endfor %}
             </tbody>
           </table>
-        </div>
+        </div><br>
         <!-- Menú de Paginación -->
         {% if is_paginated %}
             <nav aria-label="Page navigation">

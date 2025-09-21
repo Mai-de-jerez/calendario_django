@@ -12,10 +12,14 @@ from django.contrib import messages
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm, ForgotPasswordForm, ProfileForm, CustomUserUpdateForm
+
+
 # Obtener el modelo de usuario personalizado
 User = get_user_model()
 
 # Create your views here.
+
+
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
@@ -35,6 +39,7 @@ class SignUpView(CreateView):
         form.fields['respuesta_seguridad_2'].widget = forms.TextInput(attrs={'class': 'form-control mb-2', 'placeholder': 'Tu respuesta aquí'})
 
         return form
+
 
 def password_reset_username(request):
     """

@@ -39,9 +39,11 @@
                           placeholder="Buscar por Módulo" 
                           value="{{ modulo_query }}">
                 </div>
-                <div class="col-md-3 mb-2 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary mr-2">Buscar</button>
+                <div class="col-md-3 mb-2">
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary me-md-2">Buscar</button>
                     <a href="{% url 'eventos:evento_list' %}" class="btn btn-secondary">Limpiar</a>
+                  </div>
                 </div>
             </div>
         </form>

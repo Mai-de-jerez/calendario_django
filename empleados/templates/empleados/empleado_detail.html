@@ -43,23 +43,24 @@
               <dd class="col-sm-9">{{ empleado.observaciones|safe|default:"Sin observaciones." }}</dd>
             </dl>
           </div>
-          <div class="card-footer bg-light d-flex justify-content-between">
-            <!-- Botón Volver -->
-            <button onclick="window.history.back()" class="btn btn-secondary">
-              Volver
-            </button>
-            
-            {% if request.user.is_staff %}
-            <!-- Botones de Editar y Borrar (solo para staff) -->
-            <div>
-              <a href="{% url 'empleados:update' object.pk %}" class="btn btn-warning me-2">
-                Editar
-              </a>
-              <a href="{% url 'empleados:delete' object.pk %}" class="btn btn-danger">
-                Borrar
-              </a>
+          <!-- Botones de Acción -->
+          <div class="card-footer bg-light">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+              <button onclick="window.history.back()" class="btn btn-secondary">
+                Volver
+              </button>
+
+              {% if request.user.is_staff %}
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="{% url 'empleados:update' object.pk %}" class="btn btn-warning me-md-2">
+                  Editar
+                </a>
+                <a href="{% url 'empleados:delete' object.pk %}" class="btn btn-danger">
+                  Borrar
+                </a>
+              </div>
+              {% endif %}
             </div>
-            {% endif %}
           </div>
         </div>
       </div>

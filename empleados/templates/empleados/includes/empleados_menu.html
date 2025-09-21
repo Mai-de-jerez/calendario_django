@@ -3,11 +3,20 @@
 <nav class="navbar navbar-expand-lg navbar-light navbar-transparent">
   <div class="container">
     <a class="navbar-brand" href="/admin/"><i>Administrar</i></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nep" aria-controls="nep" aria-expanded="false">
-      <span class="navbar-toggler-icon"></span>
+    <button
+    data-mdb-collapse-init
+    class="navbar-toggler"
+    type="button"
+    data-mdb-target="#navbarNav2"
+    aria-controls="navbarNav2"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    >
+    <i class="fa fa-bars"></i>
     </button>
-    <div class="collapse navbar-collapse" id="nep">
-      <ul class="navbar-nav mr-auto">
+   
+    <div class="collapse navbar-collapse" id="navbarNav2">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'empleados:create' %}"><i>Añadir profesional</i></a>
         </li>

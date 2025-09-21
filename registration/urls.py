@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import SignUpView, password_reset_username, password_reset_question, password_reset_confirm, profile_update
 
-
 urlpatterns=[
     path('signup/', SignUpView.as_view(), name='signup'),
     path('reset/', password_reset_username, name='password_reset_username'),

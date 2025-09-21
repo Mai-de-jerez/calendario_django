@@ -32,11 +32,13 @@
                       </div>
 
                       <div class="mb-3">
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña">
                       </div>
 
                       <div class="text-center pt-1 mb-5 pb-1">
-                        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary w-100 fa-lg gradient-custom-2 mb-3 custom-font" type="submit">Acceder</button>
+                        <button class="btn btn-primary w-100 fa-lg gradient-custom-2 mb-3 custom-font" type="submit">
+                        Acceder
+                        </button>
                         <a class="text-muted" href="{% url 'password_reset_username' %}">¿Olvidaste tu contraseña?</a>
                       </div>
 

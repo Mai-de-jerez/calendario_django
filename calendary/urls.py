@@ -21,7 +21,8 @@ from empleados.urls import empleados_patterns
 from django.conf import settings
 from messenger.urls import messenger_patterns
 from profiles.urls import profiles_patterns
-from eventos.urls import eventos_patterns   
+from eventos.urls import eventos_patterns 
+from django.views.generic import RedirectView  
 
 urlpatterns = [
     path("", include("core.urls")),
@@ -34,7 +35,7 @@ urlpatterns = [
     path('profiles/', include(profiles_patterns)),
     path('messenger/', include(messenger_patterns)),
     path('eventos/', include(eventos_patterns)),
-    
+    path('favicon.ico', RedirectView.as_view(url='/static/core/img/favicon.ico')),
 ]
 
 

@@ -76,6 +76,15 @@
   color: rgba(0, 0, 0, .75) !important;
 }
 
+.navbar-toggler i {
+  color: white;
+}
+
+.navbar-transparent .fa-bars {
+  color: #000;
+}
+
+
 /** otros estilos **/ 
 
 h1, h2, h3, h4, h5, h6, .jumbotron-heading {
@@ -140,13 +149,13 @@ max-width: 40rem;
 
 .gradient-custom-2 {
 /* fallback for old browsers */
-background: #fccb90 !important;
+background: #fccb90;
 
 /* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593) !important;
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
 
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593) !important;
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
 }
 
 @media (min-width: 768px) {
@@ -197,18 +206,10 @@ footer p {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); 
 }
 
-/* Paginación azul acorde a botones buscar y limpiar*/
-.pagination .active .page-link {
-  background-color: #3B71CA;  
-  color: #fff;
-}
-
 /* encabezados negrita de tabla */
 .table thead th {
   font-weight: bold;
 }
-
-
 
 
 

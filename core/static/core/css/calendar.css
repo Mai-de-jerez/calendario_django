@@ -1,51 +1,11 @@
 /* calendar.css */
 
-@font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: italic;
-}
-
-body {
-    font-family: 'Raleway', sans-serif;
-    background-image: url('../img/fondo.jpg'); /* Reemplaza 'fondo.jpg' con la ruta a tu imagen */
-    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    padding-top: 70px; /* Para evitar que el contenido se superponga con la barra de navegación */
-    margin:0;
-    height: 100vh;
-    }
-
-/** ESTILOS BARRA NAV **/
-
-.bg-naranja {
-    background-color: #d8363a !important;
-    }
-
-.nav-link:hover {
-    color: rgba(255, 255, 255, .75) !important;
-    }
-
-.navbar-brand, .nav-link {
-    color: white !important;
-    }
-
-
-/** ESTILOS CALENDARIO **/
-
 #calendar-container {
     height: calc(100vh - 70px); /* Ocupa el 100% de la altura menos la barra de navegación */
     width: 85%;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     }
+
 
 #calendar {
     height: 97%;
@@ -87,7 +47,6 @@ body {
 
 /* Marca toda la columna del día (timeGridWeek) */
 
-
 .fc-timegrid-slot {
     background-color: rgba(227, 227, 202, 0.75) !important;
 }
@@ -105,6 +64,35 @@ body {
     background-color: rgba(227, 227, 202, 0.75) !important;
     font-weight: bold !important;
 }
+
+@media (max-width: 768px) {
+    /* Mantenemos el contenedor principal con ancho completo para que el encabezado se vea bien */
+    #calendar-container {
+        width: 100%;
+    }
+
+    /* Le decimos al contenedor de las celdas que tenga un ancho mínimo y scroll */
+    .fc-daygrid-body {
+        overflow-x: auto; /* Habilita el scroll horizontal */
+        min-width: 900px; /* Evita que se encoja la tabla interna */
+    }
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Mantenemos el contenedor principal con ancho completo para que el encabezado se vea bien */
+    #calendar-container {
+        width: 100%;
+    }
+
+    /* Le decimos al contenedor que haga scroll */
+    .fc-scroller {
+        overflow-x: auto;
+    }
+
+}
+
+
 
 
 
