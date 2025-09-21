@@ -1,6 +1,7 @@
 # Calend-Art™ 📅
 
 Este proyecto es un trabajo real que hice para la subdirectora de la cárcel de Granada. Es un calendario realizado con **Django** y **Full Calendar**. Tiene la peculiaridad de que funciona **sin internet** porque así lo requería el centro. Tiene todos los estilos y fuentes descargados dentro del ejecutable así que no llama a la web en ningún momento conservando los estilos responsivos de **Boostrap** y las fuentes de **Google fonts**. Se compiló con pyinstaller y gracias a la lógica interna implementada no se conecta a internet en ningún momento. Meter aplicaciones que se conecten a la intranet de la cárcel es muy delicado así que me lo pidieron así y asi lo hice.
+La versión para web también es posible sería como la que está colgada en pythonanywhere pero requeriría del uso de Django Channels y webSockects o similar, pero básicamente puedp adaptarlo a las necesidades de cualquier cliente.
 
 ## Funcionalidades:
 
