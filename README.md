@@ -1,7 +1,7 @@
 # Calend-Art™ 📅
 
-Este proyecto es un trabajo real que hice para la subdirectora de la cárcel de Granada. Es un calendario realizado con **Django** y **Full Calendar**. Tiene la peculiaridad de que funciona **sin internet** porque así lo requería el centro. Tiene todos los estilos y fuentes descargados dentro del ejecutable así que no llama a la web en ningún momento conservando los estilos responsivos de **Boostrap** y las fuentes de **Google fonts**. Se compiló con pyinstaller y gracias a la lógica interna implementada no se conecta a internet en ningún momento. Meter aplicaciones que se conecten a la intranet de la cárcel es muy delicado así que me lo pidieron así y asi lo hice.
-La versión para web también es posible sería como la que está colgada en pythonanywhere pero requeriría del uso de Django Channels y webSockects o similar, pero básicamente puedp adaptarlo a las necesidades de cualquier cliente.
+Este proyecto es un trabajo real que hice para la subdirectora de la cárcel de Granada. Es un calendario realizado con **Django** y **Full Calendar**. Tiene la peculiaridad de que funciona **sin internet** porque así lo requería el centro. Tiene todos los estilos y fuentes descargados dentro del ejecutable así que no llama a la web en ningún momento conservando los estilos responsivos de **MDBoostrap 5** y las fuentes de **Google fonts**. Se compiló con pyinstaller y gracias a la lógica interna implementada no se conecta a internet en ningún momento. Meter aplicaciones que se conecten a la intranet de la cárcel es muy delicado así que me lo pidieron así y así lo hice.
+La versión para web también es posible sería como la que está colgada en pythonanywhere pero requeriría del uso de Django Channels y webSockects o similar para convertir el sistema de mensajería en un chat típico, pero básicamente puedo adaptarlo a las necesidades de cualquier cliente.
 
 ## Funcionalidades:
 
@@ -31,7 +31,7 @@ La versión para web también es posible sería como la que está colgada en pyt
 ---
 
 ## ✨ Frontend
-- ![Bootstrap](https://img.shields.io/badge/Bootstrap_4-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)  
+- ![MDBootstrap5](https://img.shields.io/badge/Bootstrap_4-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)  
   El framework CSS para un diseño responsivo y profesional.  
 
 - ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)  
