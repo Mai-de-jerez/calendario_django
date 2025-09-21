@@ -31,7 +31,7 @@ La versión para web también es posible sería como la que está colgada en pyt
 ---
 
 ## ✨ Frontend
-- ![MDBootstrap5](https://img.shields.io/badge/Bootstrap_4-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)  
+- ![MD Bootstrap](https://mdbootstrap.com/)
   El framework CSS para un diseño responsivo y profesional.  
 
 - ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)  
