@@ -1,0 +1,98 @@
+/* calendar.css */
+
+#calendar-container {
+    height: calc(100vh - 70px); /* Ocupa el 100% de la altura menos la barra de navegación */
+    width: 85%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    }
+
+
+#calendar {
+    height: 97%;
+    background-color: transparent; /* Fondo transparente para ver la imagen de fondo */
+    border-radius: 10px;
+    padding: 10px;
+    }
+
+/* Estilos para el encabezado de los días de la semana */
+.fc-col-header-cell {
+    color: white; /* Color blanco para el texto */
+    background-color: #222243; /* Color gris claro para las celdas de los días de la semana */
+    font-weight: bold;
+    }
+
+/* Estilos para las celdas de los días */
+.fc-daygrid-day-frame {
+    background-color: rgba(227, 227, 202, 0.75); 
+    }
+
+/* Resaltar el día de hoy */
+.fc-day-today .fc-daygrid-day-frame {
+    background-color: rgba(204, 133, 67, 0.5); /* rojo transparente */
+}
+
+
+/* Estilos para las líneas de la cuadrícula, incluyendo los bordes exteriores del contenedor principal */
+.fc-theme-standard .fc-scrollgrid,
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border-color: #192A56 !important;
+    }
+
+/* Marca toda la columna del día actual (timeGridWeek) */
+.fc-timegrid-col.fc-day-today,
+.fc-timegrid-col.fc-day-today .fc-timegrid-slot {
+    background-color: rgb(208, 117, 32) !important;
+}
+
+/* Marca toda la columna del día (timeGridWeek) */
+
+.fc-timegrid-slot {
+    background-color: rgba(227, 227, 202, 0.75) !important;
+}
+
+.fc-timegrid-slot-label-cushion {
+  font-weight: bold;
+}
+
+.fc-timegrid-axis,
+.fc-timegrid-axis th {
+    background-color: #222243;
+}
+
+.fc-timegrid-axis-cushion {
+    background-color: rgba(227, 227, 202, 0.75) !important;
+    font-weight: bold !important;
+}
+
+@media (max-width: 768px) {
+    /* Mantenemos el contenedor principal con ancho completo para que el encabezado se vea bien */
+    #calendar-container {
+        width: 100%;
+    }
+
+    /* Le decimos al contenedor de las celdas que tenga un ancho mínimo y scroll */
+    .fc-daygrid-body {
+        overflow-x: auto; /* Habilita el scroll horizontal */
+        min-width: 900px; /* Evita que se encoja la tabla interna */
+    }
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Mantenemos el contenedor principal con ancho completo para que el encabezado se vea bien */
+    #calendar-container {
+        width: 100%;
+    }
+
+    /* Le decimos al contenedor que haga scroll */
+    .fc-scroller {
+        overflow-x: auto;
+    }
+
+}
+
+
+
+
+
